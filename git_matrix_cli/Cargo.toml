@@ -1,0 +1,14 @@
+[package]
+name = "git-matrix-cli"
+version = "0.1.0"
+authors = ["user"]
+edition = "2018"
+
+[[bin]]
+name = "git-remote-matrix"
+
+[dependencies]
+git-matrix = { path = "../git_matrix" }
+rpassword = "4.0.3"
+text_io = "0.1.7"
+tokio = { version = "0.2.6", features = ["macros"] }

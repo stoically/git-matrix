@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "git_matrix",
+    "git_matrix_cli"
+]
+
+[patch.crates-io]
+ruma-events = { git = "https://github.com/ruma/ruma-events" }

@@ -1,0 +1,23 @@
+[package]
+name = "git-matrix"
+version = "0.1.0"
+authors = ["user"]
+edition = "2018"
+
+[lib]
+doctest = false
+
+[dependencies]
+futures-preview = "0.3.0-alpha.19"
+futures-util = "0.3.1"
+git2 = { git = "https://github.com/stoically/git2-rs", branch = "odb-packwriter", default-features = false }
+ruma-api = "0.12.0"
+ruma-client = " 0.3.0-beta.2"
+serde = "1.0.104"
+serde_json = "1.0.44"
+tokio = "0.2.6"
+url = "2.1.0"
+uuid = { version = "0.8.1", features = ["v4"] }
+
+[dev-dependencies]
+tempfile = "3.1.0"
