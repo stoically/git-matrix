@@ -30,8 +30,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             let refs = git_matrix.refs().await.unwrap();
             if refs.len() > 0 {
                 for (ref_name, ref_sha) in refs {
-                    let remote_ref = format!("{} {}", ref_sha, ref_name);
-                    println!("{}", remote_ref);
+                    println!("{} {}", ref_sha, ref_name);
                 }
                 println!("@refs/heads/master HEAD");
             }

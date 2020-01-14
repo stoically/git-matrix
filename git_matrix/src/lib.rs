@@ -49,12 +49,6 @@ impl GitMatrixBuilder {
         self
     }
 
-    /// Set the remote rule to be used
-    pub fn remote_url(&mut self, remote: String) -> &mut Self {
-        self.remote_url = remote;
-        self
-    }
-
     /// Build the GitMatrix
     pub async fn build(self) -> Result<GitMatrix, Error> {
         let (homeserver_url, room) = self.parse_remote_url()?;

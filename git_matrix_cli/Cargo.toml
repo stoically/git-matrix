@@ -4,9 +4,6 @@ version = "0.1.0"
 authors = ["user"]
 edition = "2018"
 
-[[bin]]
-name = "git-remote-matrix"
-
 [dependencies]
 git-matrix = { path = "../git_matrix" }
 rpassword = "4.0.3"
