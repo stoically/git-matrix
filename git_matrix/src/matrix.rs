@@ -63,16 +63,7 @@ impl Builder {
 }
 
 pub fn create_client(url: &str, session: Option<Session>) -> Result<HttpsClient, Error> {
-    let client = match HttpsClient::https(url.parse()?, session) {
-        Ok(client) => client,
-        Err(_) => {
-            return Err(Error {
-                message: "Some native tls error".to_owned(),
-            })
-        }
-    };
-
-    Ok(client)
+    Ok(HttpsClient::https(url.parse()?, session))
 }
 
 #[derive(Clone)]
@@ -135,11 +126,11 @@ impl Matrix {
         event_type: &str,
         state_key: &str,
         data: crate::RefEventContent,
-    ) -> Result<r0::send::send_state_event_for_key::Response, ruma_client::Error> {
+    ) -> Result<r0::state::create_state_event_for_key::Response, ruma_client::Error> {
         let data = serde_json::to_value(data).unwrap();
         let response = self
             .client
-            .request(r0::send::send_state_event_for_key::Request {
+            .request(r0::state::create_state_event_for_key::Request {
                 room_id: self.room_id.clone(),
                 event_type: EventType::Custom(event_type.to_owned()),
                 state_key: state_key.to_owned(),
