@@ -1,5 +1,9 @@
 # git-matrix
 
+Git remote helper that lets you push and clone from matrix rooms.
+
+## Usage
+
 You'll need `cargo` to install git-matrix, [rustup](https://rustup.sh) if you don't have it yet.
 
 ```shell
